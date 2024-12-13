@@ -57,16 +57,16 @@ class LogisticRegressionModel(BaseModel):
         super().__init__()
         self.model = LogisticRegression()
 
-# Randmforest
-class randomforest(BaseModel):
+# Decision Tree
+class DecisionTree(BaseModel):
     def __init__(self):
         super().__init__()
-        self.model = RandomForestClassifier()
+        self.model = DecisionTreeClassifier()()
 
 # Training pipeline
 def training_pipeline(filepath):
     """Prepare and execute the training pipeline for both models."""
-    models = [LogisticRegressionModel(), randomforest()]
+    models = [LogisticRegressionModel(), DecisionTree()]
     
     for model in models:
         print(f"\nTraining {model.__class__.__name__}...")
